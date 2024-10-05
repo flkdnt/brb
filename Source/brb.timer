@@ -1,0 +1,12 @@
+
+[Unit]
+Description=Runs BRB Scheduler for backup jobs
+Requires=brb.service
+
+[Timer]
+Unit=brb.service
+OnBootSec=1min
+OnCalendar=hourly
+
+[Install]
+WantedBy=timers.target

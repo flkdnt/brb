@@ -1,0 +1,35 @@
+---
+jobs:
+
+  - name: testjob
+    parameters:
+      args: "--update --progress"
+      command: copy
+      frequency: daily
+      program: rclone
+    paths:
+      destination: /var/test
+      source: /tmp/test
+    pathtypes:
+      destination: local
+      source: local
+
+
+  - name: testjob2
+    parameters:
+      frequency: 6 hours
+    paths:
+      destination: /var/test
+      source: /tmp/test
+
+  - name: testjob3
+    parameters:
+      command: sync
+      frequency: hourly
+    paths:
+      destination: miniobucket/documents
+      source: /home/USER/Documents
+    pathtypes:
+      destination: minio
+      source: local
+

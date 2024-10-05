@@ -1,0 +1,10 @@
+
+[Unit]
+Description=Bash Rclone Backups(BRB) scheduler
+
+[Service]
+Type=oneshot
+ExecStart=USER_HOME_DIRECTORY/.brb/scheduler.sh
+
+[Install]
+WantedBy=multi-user.target
